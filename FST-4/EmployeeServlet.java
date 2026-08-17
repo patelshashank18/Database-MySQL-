@@ -6,14 +6,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Servlet that handles employee registration requests.
+ */
 @WebServlet("/register")
 public class EmployeeServlet extends HttpServlet {
 
+        /**
+         * Handles POST requests from the employee registration form.
+         *
+         * @param request  HTTP request containing employee form data
+         * @param response HTTP response sent back to the client
+         * @throws ServletException if a servlet-related error occurs
+         * @throws IOException      if an input or output error occurs
+         */
         protected void doPost(HttpServletRequest request,
                         HttpServletResponse response)
                         throws ServletException, IOException {
 
-                // Get form data
+                /**
+                 * Gets employee form data from the request.
+                 */
                 String firstName = request.getParameter("firstName");
 
                 String lastName = request.getParameter("lastName");
@@ -25,7 +38,9 @@ public class EmployeeServlet extends HttpServlet {
                 double salary = Double.parseDouble(
                                 request.getParameter("salary"));
 
-                // Create Employee object
+                /**
+                 * Creates an Employee object using the form data.
+                 */
                 Employee employee = new Employee(
                                 firstName,
                                 lastName,
@@ -33,15 +48,25 @@ public class EmployeeServlet extends HttpServlet {
                                 phone,
                                 salary);
 
-                // Create DAO object
+                /**
+                 * Creates an EmployeeDao object.
+                 */
                 EmployeeDao dao = new EmployeeDao();
 
-                // Save employee data
+                /**
+                 * Saves employee data into the database.
+                 */
                 dao.saveEmployee(employee);
 
-                // Send response
+                /**
+                 * Sets the response content type to HTML.
+                 */
                 response.setContentType("text/html");
 
+                /**
+                 * Sends the employee registration result
+                 * back to the browser.
+                 */
                 response.getWriter().println(
                                 "<html><body>"
                                                 + "<h2>Employee Registered Successfully!</h2>"

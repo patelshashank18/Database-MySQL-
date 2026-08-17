@@ -7,10 +7,13 @@
 
 <body>
 
+    <!-- Displays the employee registration form heading -->
     <h2>Employee Registration Form</h2>
 
+    <!-- Employee registration form -->
     <form action="register" method="post">
 
+        <!-- First name input field -->
         <label>First Name:</label>
         <input type="text"
                name="firstName"
@@ -19,6 +22,7 @@
                required>
         <br><br>
 
+        <!-- Last name input field -->
         <label>Last Name:</label>
         <input type="text"
                name="lastName"
@@ -27,12 +31,14 @@
                required>
         <br><br>
 
+        <!-- Email input field -->
         <label>Email:</label>
         <input type="email"
                name="email"
                required>
         <br><br>
 
+        <!-- Phone number input field -->
         <label>Phone:</label>
         <input type="text"
                name="phone"
@@ -43,6 +49,7 @@
                required>
         <br><br>
 
+        <!-- Salary input field -->
         <label>Salary:</label>
         <input type="number"
                name="salary"
@@ -51,6 +58,7 @@
                required>
         <br><br>
 
+        <!-- Submit button -->
         <input type="submit" value="Register">
 
     </form>
